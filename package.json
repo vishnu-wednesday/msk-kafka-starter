@@ -1,0 +1,56 @@
+{
+  "name": "serverless-mono-repo-kafka",
+  "version": "1.0.0",
+  "description": "A serverless apache kafka experiment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write '**/*.{ts,js,json,yml}'",
+    "lint": "eslint '**/*.{ts,js,json,yml}'",
+    "lint:fix": "eslint --fix '**/*.{ts,js,json,yml}'",
+    "debug": "export SLS_DEBUG=*",
+    "start:local": "npm run debug && sls offline start --stage local",
+    "build:local": "npm run debug && sls offline package --stage local",
+    "deploy:development": "npx serverless deploy --stage development",
+    "test": "jest --coverage --silent",
+    "test:local": "jest --coverage --watchAll"
+  },
+  "keywords": [],
+  "author": "vishnu-wednesday",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.5.1",
+    "serverless": "^3.2.0",
+    "serverless-offline": "^8.4.0",
+    "serverless-webpack": "^5.6.1",
+    "webpack": "^5.68.0",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "imports": {
+    "#utils": "./utils/*",
+    "#services": "./services/*"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "npm run lint:fix",
+      "npm run format",
+	  "jest --findRelatedTests --runInBand $STAGED_FILES"
+	],
+    "*.yml": [
+      "npm run lint:fix",
+      "npm run format"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

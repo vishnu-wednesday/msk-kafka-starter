@@ -1,0 +1,17 @@
+service: node-mongo-kafka-experiment
+useDotenv: true
+
+plugins:
+  - serverless-webpack
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: ${sls:stage}
+  region: ${env:AWS_REGION}
+
+custom:
+  webpack:
+    webpackConfig: webpack.config.cjs
+    includeModules: true
+    excludeFiles: ['./**/*.test.js']
