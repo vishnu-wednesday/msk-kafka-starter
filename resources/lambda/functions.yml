@@ -1,0 +1,7 @@
+starterFunctionForKafka:
+  handler: functions/kafka-starter/index.handler
+  events:
+    - http:
+        method: GET
+        path: /starter
+        cors: true

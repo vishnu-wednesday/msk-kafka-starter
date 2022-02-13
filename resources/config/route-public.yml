@@ -1,0 +1,20 @@
+Resources:
+  ServerlessPublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref ServerlessVPC
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-public-route-table
+  ServerlessPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: ServerlessVPCGWAttachment
+    Properties:
+      RouteTableId: !Ref ServerlessPublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref ServerlessIGW
+  ServerlessPublicSubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref ServerlessPublicSubnet1
+      RouteTableId: !Ref ServerlessPublicRouteTable

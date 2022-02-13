@@ -1,0 +1,23 @@
+Resources:
+  ServerlessDefaultPrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref ServerlessVPC
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-private-route-table
+  PrivateSubnetRouteTableAssociation1:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref ServerlessPrivateSubnet1
+      RouteTableId: !Ref ServerlessDefaultPrivateRouteTable
+  PrivateSubnetRouteTableAssociation2:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref ServerlessPrivateSubnet2
+      RouteTableId: !Ref ServerlessDefaultPrivateRouteTable
+  PrivateSubnetRouteTableAssociation3:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref ServerlessPrivateSubnet3
+      RouteTableId: !Ref ServerlessDefaultPrivateRouteTable

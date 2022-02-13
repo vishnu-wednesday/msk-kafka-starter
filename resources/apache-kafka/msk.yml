@@ -1,0 +1,35 @@
+Resources:
+  ServerlessMSK:
+    Type: AWS::MSK::Cluster
+    Properties:
+      ClusterName: ${self:service}-${self:provider.stage}-msk
+      KafkaVersion: 2.6.2
+      BrokerNodeGroupInfo:
+        InstanceType: kafka.t3.small
+        ClientSubnets:
+          - !Ref ServerlessPublicSubnet1
+          - !Ref ServerlessPublicSubnet2
+        SecurityGroups:
+          - !Ref ServerlessMSKSecurityGroup
+        StorageInfo:
+          EbsStorageInfo:
+            VolumeSize: 10
+      NumberOfBrokerNodes: 3
+      EncryptionInfo:
+        EncryptionAtRest:
+          Enabled: true
+          DataVolumeKMSKeyId: !GetAtt ServerlessMSKEncryptionKey.Arn
+      LoggingInfo:
+        BrokerLogs:
+          CloudWatchLogs:
+            Enabled: true
+            LogGroup: !Ref ServerlessMSKLogGroup
+      OpenMonitoring:
+        Prometheus:
+          JmxExporter:
+            EnabledInBroker: 'true'
+          NodeExporter:
+            EnabledInBroker: 'true'
+      Tags:
+        - Key: Name
+          Value: ${self:service}-${self:provider.stage}-msk

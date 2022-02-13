@@ -1,17 +1,27 @@
 service: node-mongo-kafka-experiment
+frameworkVersion: '3'
 useDotenv: true
 
 plugins:
   - serverless-webpack
+  - serverless-offline
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs14.x
   stage: ${sls:stage}
   region: ${env:AWS_REGION}
+
+package:
+  individually: true
+
+functions: ${file('./resources/lambda/functions.yml')}
 
 custom:
   webpack:
     webpackConfig: webpack.config.cjs
     includeModules: true
     excludeFiles: ['./**/*.test.js']
+resources:
+  - ${file('./resources/config/vpc.yml')}
+  - ${file('./resources/config/subnets.yml')}
