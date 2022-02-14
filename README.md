@@ -4,12 +4,12 @@ The Repo is an experiment to see how to use the [Serverless Framework](https://s
 
 ### Current Resources Added
 
-[] VPC:
-[] Subnet:
-[] Route Tables
-[] IG
-[] Security Group:
-[] Kafka Cluster:
+- [x] VPC:
+- [x] Subnet:
+- [x] Route Tables
+- [x] IG
+- [x] Security Group:
+- [x] Kafka Cluster:
 
 ### Some thoughts and points
 
