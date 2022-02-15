@@ -1,9 +1,9 @@
 name: Serverless Node Kafka CI Piepline
 on: 
   pull_request:
-  branches:
-    - main
-    - development
+    branches:
+      - main
+      - development
 
 jobs:
   build:
