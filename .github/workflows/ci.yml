@@ -22,8 +22,8 @@ jobs:
         run: npm i
       - name: Lint
         run: npm run lint:fix
-      - name: Run test
-        run: npm run test
+      # - name: Run test
+      #   run: npm run test
 
       # - uses: artiomtr/jest-coverage-report-action@v2
       #   if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/staging'
