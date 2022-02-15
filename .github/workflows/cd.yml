@@ -20,7 +20,7 @@ jobs:
           if [[ ${{steps.vars.outputs.stage}} == 'main' ]]; then
               echo "ENVIRONMENT_NAME=prod" >> "$GITHUB_ENV"
           else
-              echo "ENVIRONMENT_NAME=staging" >> "$GITHUB_ENV"
+              echo "ENVIRONMENT_NAME=development" >> "$GITHUB_ENV"
           fi
       - name: Setup environment
         uses: actions/setup-node@v2-beta
