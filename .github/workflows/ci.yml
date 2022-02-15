@@ -34,4 +34,4 @@ jobs:
       #     test-script: yarn jest --silent --ci --coverage --testLocationInResults --json --outputFile="report.json"
 
       - name: Build
-        run: npm run build
+        run: npm run build:local
