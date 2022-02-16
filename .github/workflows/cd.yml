@@ -1,0 +1,36 @@
+name: Serverless Kafka CD Pipeline
+
+on:
+  push:
+    branches:
+      - development
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get branch name
+        id: vars
+        run: echo ::set-output name=stage::${GITHUB_REF#refs/*/}
+      - name: Set env.ENVIRONMENT_NAME
+        run: |
+          if [[ ${{steps.vars.outputs.stage}} == 'main' ]]; then
+              echo "ENVIRONMENT_NAME=prod" >> "$GITHUB_ENV"
+          else
+              echo "ENVIRONMENT_NAME=development" >> "$GITHUB_ENV"
+          fi
+      - name: Setup environment
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm i
+
+      - name: Deploy
+        run: npm run deploy-${{steps.vars.outputs.stage}}
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
