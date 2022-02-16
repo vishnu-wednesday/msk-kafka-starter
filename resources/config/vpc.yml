@@ -12,4 +12,4 @@ Resources:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
       VpcId: !Ref ServerlessVPC
-      InternetGatewayId: !Ref ServerlessInternetGateway
+      InternetGatewayId: !Ref ServerlessIGW
