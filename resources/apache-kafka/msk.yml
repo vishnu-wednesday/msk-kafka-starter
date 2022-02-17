@@ -26,6 +26,6 @@ Resources:
             EnabledInBroker: 'true'
           NodeExporter:
             EnabledInBroker: 'true'
-      Tags:
-        - Key: Name
-          Value: ${self:service}-${self:provider.stage}-msk
+    Tags:
+      - Key: Name
+        Value: ${self:service}-${self:provider.stage}-msk
