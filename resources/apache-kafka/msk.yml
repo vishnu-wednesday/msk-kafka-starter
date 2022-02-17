@@ -20,3 +20,4 @@ Resources:
         EncryptionInTransit:
           ClientBroker: TLS
           InCluster: true
+      EnhancedMonitoring: PER_TOPIC_PER_BROKER
