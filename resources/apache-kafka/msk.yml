@@ -11,7 +11,7 @@ Resources:
           - !Ref ServerlessPrivateSubnet2
           - !Ref ServerlessPrivateSubnet3
         SecurityGroups:
-          - !Ref ServerlessMSKSecurityGroup
+          - !GetAtt ServerlessMSKSecurityGroup.GroupId
         StorageInfo:
           EbsStorageInfo:
             VolumeSize: 10
