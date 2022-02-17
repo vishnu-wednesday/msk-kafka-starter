@@ -7,8 +7,9 @@ Resources:
       BrokerNodeGroupInfo:
         InstanceType: kafka.t3.small
         ClientSubnets:
-          - !Ref ServerlessPublicSubnet1
-          - !Ref ServerlessPublicSubnet2
+          - !Ref ServerlessPrivateSubnet1
+          - !Ref ServerlessPrivateSubnet2
+          - !Ref ServerlessPrivateSubnet3
         SecurityGroups:
           - !Ref ServerlessMSKSecurityGroup
         StorageInfo:
@@ -19,11 +20,6 @@ Resources:
         EncryptionInTransit:
           ClientBroker: TLS
           InCluster: true
-      LoggingInfo:
-        BrokerLogs:
-          CloudWatchLogs:
-            Enabled: true
-            LogGroup: !Ref ServerlessMSKLogGroup
       OpenMonitoring:
         Prometheus:
           JmxExporter:
