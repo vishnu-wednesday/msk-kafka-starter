@@ -20,12 +20,3 @@ Resources:
         EncryptionInTransit:
           ClientBroker: TLS
           InCluster: true
-      OpenMonitoring:
-        Prometheus:
-          JmxExporter:
-            EnabledInBroker: 'true'
-          NodeExporter:
-            EnabledInBroker: 'true'
-      Tags:
-        - Key: Name
-          Value: ${self:service}-${self:provider.stage}-msk
