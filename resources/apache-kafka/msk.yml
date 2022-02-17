@@ -16,9 +16,9 @@ Resources:
             VolumeSize: 10
       NumberOfBrokerNodes: 3
       EncryptionInfo:
-        EncryptionAtRest:
-          Enabled: true
-          DataVolumeKMSKeyId: !GetAtt ServerlessMSKEncryptionKey.Arn
+        EncryptionInTransit:
+          ClientBroker: TLS
+          InCluster: true
       LoggingInfo:
         BrokerLogs:
           CloudWatchLogs:
