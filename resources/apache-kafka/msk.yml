@@ -11,7 +11,7 @@ Resources:
           - !Ref ServerlessPrivateSubnet2
           - !Ref ServerlessPrivateSubnet3
         SecurityGroups:
-          - !Ref ServerlessMSKSecurityGroup
+          - !GetAtt ServerlessMSKSecurityGroup.GroupId
         StorageInfo:
           EbsStorageInfo:
             VolumeSize: 10
@@ -20,12 +20,4 @@ Resources:
         EncryptionInTransit:
           ClientBroker: TLS
           InCluster: true
-      OpenMonitoring:
-        Prometheus:
-          JmxExporter:
-            EnabledInBroker: 'true'
-          NodeExporter:
-            EnabledInBroker: 'true'
-      Tags:
-        - Key: Name
-          Value: ${self:service}-${self:provider.stage}-msk
+      EnhancedMonitoring: PER_TOPIC_PER_BROKER
