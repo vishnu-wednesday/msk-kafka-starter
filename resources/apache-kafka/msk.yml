@@ -13,7 +13,7 @@ Resources:
         SecurityGroups:
           - !GetAtt ServerlessMSKSecurityGroup.GroupId
         StorageInfo:
-          EbsStorageInfo:
+          EBSStorageInfo:
             VolumeSize: 10
       NumberOfBrokerNodes: 3
       EncryptionInfo:
