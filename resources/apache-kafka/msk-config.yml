@@ -3,5 +3,4 @@ Resources:
     Type: AWS::MSK::Configuration
     Properties:
       ServerProperties:
-        Fn::Base64: |
-          auto.create.topics.enable=true
+        Fn::Base64: auto.create.topics.enable=true default.replication.factor=2 min.insync.replicas=2 num.io.threads=8 num.network.threads=5 num.partitions=10
