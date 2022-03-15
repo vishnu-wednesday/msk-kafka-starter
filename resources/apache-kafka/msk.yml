@@ -21,3 +21,6 @@ Resources:
           ClientBroker: TLS
           InCluster: true
       EnhancedMonitoring: PER_TOPIC_PER_BROKER
+      ConfigurationInfo:
+        Arn: !GetAtt ServerlessMSKConfiguration.Arn
+        Revison: 1

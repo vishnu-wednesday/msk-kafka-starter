@@ -1,0 +1,8 @@
+Resources:
+  ServerlessMSKConfiguration:
+    Type: AWS::MSK::Configuration
+    Properties:
+      Description: Serverless MSK Configuration
+      KafkaVersionList: [2.6.2]
+      Name: ServerlessMSKConfiguration
+      ServerProperties: YXV0by5jcmVhdGUudG9waWNzLmVuYWJsZSA9IHRydWUKem9va2VlcGVyLmNvbm5lY3Rpb24udGltZW91dC5tcyA9IDEwMDAKbWluLmluc3luYy5yZXBsaWNhcyA9IDI=
