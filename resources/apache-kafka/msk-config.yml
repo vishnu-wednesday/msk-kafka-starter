@@ -3,5 +3,4 @@ Resources:
     Type: AWS::MSK::Configuration
     Properties:
       ServerProperties:
-        Fn::Base64: |
-          auto.create.topics.enable=true
+        Fn::Base64: auto.create.topics.enable=true
