@@ -3,4 +3,12 @@ Resources:
     Type: AWS::MSK::Configuration
     Properties:
       ServerProperties:
-        Fn::Base64: auto.create.topics.enable=true
+        Fn::Base64: |
+          'auto.create.topics.enable=false'
+          'default.replication.factor=3'
+          'min.insync.replicas=2'
+          'num.partitions=1'
+          'num.replica.fetchers=1'
+          'replica.lag.time.max.ms=1000'
+          'socket.send.buffer.bytes=102400'
+          'socket.receive.buffer.bytes=102400'
