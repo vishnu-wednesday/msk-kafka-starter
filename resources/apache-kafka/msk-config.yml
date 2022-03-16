@@ -2,5 +2,5 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      ServerProperties: !Base64 |-
+      ServerProperties: !Base64 |
         auto.create.topics.enable=true

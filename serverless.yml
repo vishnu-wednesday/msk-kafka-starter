@@ -29,5 +29,5 @@ resources:
   - ${file('./resources/config/route-private.yml')}
   - ${file('./resources/config/route-public.yml')}
   - ${file('./resources/config/security-groups.yml')}
-  - ${file('./resources/apache-kafka/msk-config.yml')}
+  # - ${file('./resources/apache-kafka/msk-config.yml')}
   - ${file('./resources/apache-kafka/msk.yml')}
