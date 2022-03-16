@@ -2,17 +2,6 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      ServerProperties: !Base64 |
-        auto.create.topics.enable=false
-        default.replication.factor=2
-        min.insync.replicas=2
-        num.io.threads=8
-        num.network.threads=8
-        num.replica.fetchers=1
-        num.partitions=10
-        replica.lag.time.max.ms=10000
-        socket.receive.buffer.bytes=102400
-        socket.request.max.bytes=104857600
-        socket.send.buffer.bytes=102400
-        unclean.leader.election.enable=true
-        zookeeper.session.timeout.ms=18000
+      Description: Create Topics and Enable
+      Name: create-topics-enable-1
+      ServerProperties: YXV0by5jcmVhdGUudG9waWNzLmVuYWJsZT1mYWxzZQpkZWZhdWx0LnJlcGxpY2F0aW9uLmZhY3Rvcj0yCm1pbi5pbnN5bmMucmVwbGljYXM9MgpudW0uaW8udGhyZWFkcz04Cm51bS5uZXR3b3JrLnRocmVhZHM9OApudW0ucmVwbGljYS5mZXRjaGVycz0xCm51bS5wYXJ0aXRpb25zPTEwCnJlcGxpY2EubGFnLnRpbWUubWF4Lm1zPTEwMDAwCnNvY2tldC5yZWNlaXZlLmJ1ZmZlci5ieXRlcz0xMDI0MDAKc29ja2V0LnJlcXVlc3QubWF4LmJ5dGVzPTEwNDg1NzYwMApzb2NrZXQuc2VuZC5idWZmZXIuYnl0ZXM9MTAyNDAwCnVuY2xlYW4ubGVhZGVyLmVsZWN0aW9uLmVuYWJsZT10cnVlCnpvb2tlZXBlci5zZXNzaW9uLnRpbWVvdXQubXM9MTgwMDA
