@@ -2,7 +2,5 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      Description: Create Topics and Enable
-      Name: create-topics-enable-1
       ServerProperties: !Base64 |-
         auto.create.topics.enable=true
