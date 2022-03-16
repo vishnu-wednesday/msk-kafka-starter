@@ -4,7 +4,5 @@ Resources:
     Properties:
       Description: Create Topics and Enable
       Name: create-topics-enable-1
-      ServerProperties: !Base64 |
-        {
-          "auto.create.topics.enable": "true",
-        }
+      ServerProperties: !Base64 |-
+        auto.create.topics.enable=true
