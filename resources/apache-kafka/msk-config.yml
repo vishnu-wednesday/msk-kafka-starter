@@ -2,8 +2,7 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      Name: ${self:service}-${self:provider.stage}-msk-configuration
-      ServerProperties: !Base64 |-
+      ServerProperties: !Base64 |
         auto.create.topics.enable=false
         default.replication.factor=2
         min.insync.replicas=2
