@@ -2,20 +2,18 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      ServerProperties:
-        Fn::Base64:
-          Fn::Join:
-            - ''
-            - - auto.create.topics.enable=false
-              - default.replication.factor=2
-              - min.insync.replicas=2
-              - num.io.threads=8
-              - num.network.threads=8
-              - num.replica.fetchers=1
-              - num.partitions=10
-              - replica.lag.time.max.ms=10000
-              - socket.receive.buffer.bytes=102400
-              - socket.request.max.bytes=104857600
-              - socket.send.buffer.bytes=102400
-              - unclean.leader.election.enable=true
-              - zookeeper.session.timeout.ms=18000
+      Name: ${self:service}-${self:provider.stage}-msk-configuration
+      ServerProperties: !Base64 |-
+        auto.create.topics.enable=false
+        default.replication.factor=2
+        min.insync.replicas=2
+        num.io.threads=8
+        num.network.threads=8
+        num.replica.fetchers=1
+        num.partitions=10
+        replica.lag.time.max.ms=10000
+        socket.receive.buffer.bytes=102400
+        socket.request.max.bytes=104857600
+        socket.send.buffer.bytes=102400
+        unclean.leader.election.enable=true
+        zookeeper.session.timeout.ms=18000
