@@ -2,4 +2,6 @@ Resources:
   ServerlessMSKConfiguration:
     Type: AWS::MSK::Configuration
     Properties:
-      ServerProperties: 'YXV0by5jcmVhdGUudG9waWNzLmVuYWJsZT10cnVlCmRlZmF1bHQucmVwbGljYXRpb24uZmFjdG9yPTIKbWluLmluc3luYy5yZXBsaWNhcz0yCm51bS5pby50aHJlYWRzPTgKbnVtLm5ldHdvcmsudGhyZWFkcz01Cm51bS5wYXJ0aXRpb25zPTEwCm51bS5yZXBsaWNhLmZldGNoZXJzPTIKcmVwbGljYS5sYWcudGltZS5tYXgubXM9MzAwMDAKc29ja2V0LnJlY2VpdmUuYnVmZmVyLmJ5dGVzPTEwMjQwMApzb2NrZXQucmVxdWVzdC5tYXguYnl0ZXM9MTA0ODU3NjAwCnNvY2tldC5zZW5kLmJ1ZmZlci5ieXRlcz0xMDI0MDAKdW5jbGVhbi5sZWFkZXIuZWxlY3Rpb24uZW5hYmxlPXRydWUKem9va2VlcGVyLnNlc3Npb24udGltZW91dC5tcz0xODAwMA==\'
+      Description: 'cluster config for node-mongo-kafka-experiment-config'
+      Name: 'node-mongo-kafka-experiment-config'
+      ServerProperties: ${file('./assets/server.properties')}

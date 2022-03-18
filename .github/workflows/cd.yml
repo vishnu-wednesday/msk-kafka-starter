@@ -3,7 +3,7 @@ name: Serverless Kafka CD Pipeline
 on:
   push:
     branches:
-      - develop
+      - development
 jobs:
   deploy:
     runs-on: ubuntu-latest

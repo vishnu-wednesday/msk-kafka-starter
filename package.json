@@ -12,7 +12,7 @@
     "debug": "export SLS_DEBUG=*",
     "start:local": "npm run debug && sls offline start --stage local",
     "build:local": "npm run debug && sls package --stage local",
-    "deploy:develop": "npx serverless deploy --stage development",
+    "deploy:development": "npx serverless deploy --stage development",
     "test": "jest --coverage --silent",
     "test:local": "jest --coverage --watchAll",
     "lint-staged": "lint-staged"
