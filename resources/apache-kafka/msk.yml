@@ -22,5 +22,5 @@ Resources:
           InCluster: true
       EnhancedMonitoring: PER_TOPIC_PER_BROKER
       ConfigurationInfo:
-        Arn: arn:aws:kafka:ap-south-1:511522223657:configuration/create-topics-enable/dc756172-71cd-4d54-a182-cab994622889-4
-        Revision: 6
+        Arn: !GetAtt ServerlessMSKConfiguration.Arn
+        Revision: 1
