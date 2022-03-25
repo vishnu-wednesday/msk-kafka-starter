@@ -1,4 +1,4 @@
-service: node-mongo-kafka-experiment-${sls:stage}
+service: msk-kafka-${sls:stage}
 frameworkVersion: '3'
 useDotenv: true
 
