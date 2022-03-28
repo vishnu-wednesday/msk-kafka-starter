@@ -1,5 +1,5 @@
-name: Serverless Node Kafka CI Piepline
-on: 
+name: Serverless MSK CI Piepline
+on:
   pull_request:
     branches:
       - main

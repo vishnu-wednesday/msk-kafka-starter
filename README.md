@@ -1,6 +1,6 @@
-## Serverless Node Kafka Experiment
+## Serverless MSK Cluster and Configuration
 
-The Repo is an experiment to see how to use the [Serverless Framework](https://serverless.com/) to deploy a AWS MSK cluster.
+The Repo is an experiment to see how to use the [Serverless Framework](https://serverless.com/) to deploy a AWS MSK cluster amd Configuration.
 
 ### Current Resources Added
 
@@ -10,6 +10,7 @@ The Repo is an experiment to see how to use the [Serverless Framework](https://s
 - [x] IG
 - [x] Security Group:
 - [x] Kafka Cluster:
+- [x] Kafka Configuration
 
 ### Some thoughts and points
 
