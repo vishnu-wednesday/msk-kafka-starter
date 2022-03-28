@@ -1,7 +1,0 @@
-Resources:
-  ServerlessMSKConfiguration:
-    Type: AWS::MSK::Configuration
-    Properties:
-      Description: cluster for msk cluster-${sls:stage}
-      Name: node-mongo-kafka-experiment-${sls:stage}-config
-      ServerProperties: ${file('./assets/server.properties')}

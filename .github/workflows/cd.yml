@@ -1,4 +1,4 @@
-name: Serverless Kafka CD Pipeline
+name: Serverless MSK CD Pipeline
 
 on:
   push:

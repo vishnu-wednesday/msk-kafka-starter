@@ -1,7 +1,0 @@
-Resources:
-  ServerlessIGW:
-    Type: AWS::EC2::InternetGateway
-    Properties:
-      Tags:
-        - Key: Name
-          Value: ${self:service}-${self:provider.stage}-igw

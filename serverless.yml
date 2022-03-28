@@ -15,19 +15,12 @@ provider:
 package:
   individually: true
 
-functions: ${file('./resources/lambda/functions.yml')}
-
 custom:
   webpack:
     webpackConfig: webpack.config.cjs
     includeModules: true
     excludeFiles: ['./**/*.test.js']
+
 resources:
+  # we will add further resources here...
   - ${file('./resources/config/vpc.yml')}
-  - ${file('./resources/config/subnets.yml')}
-  - ${file('./resources/config/igw.yml')}
-  - ${file('./resources/config/route-private.yml')}
-  - ${file('./resources/config/route-public.yml')}
-  - ${file('./resources/config/security-groups.yml')}
-  - ${file('./resources/apache-kafka/msk-config.yml')}
-  - ${file('./resources/apache-kafka/msk.yml')}
