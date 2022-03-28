@@ -27,11 +27,11 @@ module.exports = {
     ],
   },
   devtool: 'source-map',
-  // output: {
-  //   library: {
-  //     type: 'module',
-  //   },
-  //   path: path.join(__dirname, 'dist'),
-  //   filename: '[name].js',
-  // },
+  output: {
+    library: {
+      type: 'module',
+    },
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js',
+  },
 };

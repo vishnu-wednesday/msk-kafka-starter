@@ -21,10 +21,11 @@
   "author": "vishnu-wednesday",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.2",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "babel-loader": "^8.2.3",
-    "core-js": "^3.21.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-json": "^3.1.0",
@@ -41,8 +42,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "imports": {
-    "#utils": "./utils/*",
-    "#services": "./services/*"
+    "#services/*": "./services/*.js"
   },
   "lint-staged": {
     "*.{ts,js}": [
@@ -53,5 +53,11 @@
       "npm run format",
       "npm run lint:fix"
     ]
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.8",
+    "apisauce": "^2.1.5",
+    "axios": "^0.26.1",
+    "core-js": "^3.21.1"
   }
 }

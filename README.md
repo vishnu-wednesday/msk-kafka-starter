@@ -13,6 +13,6 @@ The Repo is an experiment to see how to use the [Serverless Framework](https://s
 
 ### Some thoughts and points
 
-This project runs using Serverless Framework (v3) and Webpack (v5).
+This project runs using Serverless Framework (v3) and Webpack (v5). We use npm as the package manager. Node v16.x is recommended
 
 LICENSE: MIT
