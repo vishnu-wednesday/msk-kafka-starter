@@ -24,3 +24,8 @@ custom:
 resources:
   # we will add further resources here...
   - ${file('./resources/config/vpc.yml')}
+  - ${file('./resources/config/subnets.yml')}
+  - ${file('./resources/config/igw.yml')}
+  - ${file('./resources/config/route-private.yml')}
+  - ${file('./resources/config/route-public.yml')}
+  - ${file('./resources/config/security-groups.yml')}
